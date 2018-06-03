@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <% include ../partials/header.ejs %>
+   </head>
+   <body>
+      <% include ../partials/nav.ejs %>
+      <div class="jumbotron text-center">
+         <div class="container">
+            <a href="https://www.kainos.pl/" class="shadowed">
+                <img src="/kainos-logo-sticky.png">
+            </a>
+            <a href="/" class="lang-logo">
+                <img src="/btc-logo.png">
+            </a>
+            <h1>CoinTrends 2018</h1>
+            <p>Use buttons below to change time range</p>
+            <a id="daily" type="button" class="btn btn-lg btn-primary" ><span class="glyphicon glyphicon-cog"></span> Daily data</a>
+            <a id="monthly" type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-cog"></span> Monthly data</a>
+            <a id="alltime" type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-cog"></span> Alltime data</a>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row text-center">
+            <div id="container" style="width:100%; height:100%;max-width:1000px;margin: 0 auto"></div>
+            <script type="text/javascript" src="https://code.highcharts.com/stock/highstock.js"></script>
+            <script type="text/javascript">
+               <% include ../partials/chart.js %>
+            </script>
+         </div>
+         <hr>
+         <div class="row">
+            <div>
+               <h3><span class="glyphicon glyphicon-info-sign"></span> Info</h3>
+               <ul>
+                  <li>Unfortunately, trend lines have not been implemented for various reasons. <br>
+                     First of all, time was very limited, so I have not started doing it (but made some analysis of the problem). <br>
+                     Second, AFAIK, trend lines are something "quite subjective" (although not exactly, it's complicated) and most of coin-traders draw them manually, as they like.<br>
+                     Third, I have been searching for an alghoritm for such trend lines for quite long time and have not succeeded. I have found although some code for native trading applications, but I do not know them, nor their specific languages. The problem is more complex than I originally thought.
+                  </li>
+                  <li>Although, I have thought of <b>my own, simplified algorithm</b>, sadly, I did not find time to implement/test it. <br>
+                     Finding a trend line would go like this:
+                  </li>
+                  <ul>
+                     <li>find local minimums (maximums) by using function derivatives from limited range of data</li>
+                     <li>if number of minimums (maximums) is bigger than 2, find local minimums out of new set; repeat if needed</li>
+                     <li>find a line between first and last point of the set</li>
+                     <li>limit the line by first and last element of primary data</li>
+                  </ul>
+               </ul>
+            </div>
+         </div>
+         <!-- row -->
+         <div class="alert alert-info text-center" role="alert">
+            Created by Paweł Polewczak
+         </div>
+      </div>
+   </body>
+</html>

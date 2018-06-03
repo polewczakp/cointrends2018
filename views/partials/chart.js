@@ -21,10 +21,10 @@
      const date = new Date(dateParts[0], parseInt(dateParts[1], 10) - 1, dateParts[2], timeParts[0], timeParts[1], timeParts[2]);
 
      dateNow = new Date();
-	 const offsetFactor = -1/60; // getTimezoneOffset() returns -120 for GMT+2
+	 const offsetFactor = -1/30; // getTimezoneOffset() returns -120 for GMT+2
      timezone = dateNow.getTimezoneOffset() * offsetFactor; 
 	 const hour = 3600000; // 1 hour = 3600000 ms
-     tzOffset = timezone * hour;
+     tzOffset = timezone * hour;  
      return date.getTime() + tzOffset;
    }
 

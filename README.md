@@ -9,7 +9,7 @@ Application shows BTC, ETH and LTC prices in USD in one chart in order to compar
 Make sure you have [Node.js](http://nodejs.org/) installed
 
 ```sh
-$ git clone git@github.com:polewczakp/cointrends2018.git # or clone your own fork
+$ git clone https://github.com/polewczakp/cointrends2018.git # or clone your own fork
 $ cd cointrends2018
 $ npm install
 $ npm start

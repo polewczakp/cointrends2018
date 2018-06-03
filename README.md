@@ -1,0 +1,1 @@
+# cointrends2018
